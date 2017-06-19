@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         checkBox = (CheckBox) findViewById(R.id.checkBox1);
         Data.loadData(this);
         View[] views = new View[]{
-                findViewById(R.id.button5)
+                findViewById(R.id.button)
         };
         for(View view : views) {
             view.setOnTouchListener(new View.OnTouchListener() {
@@ -34,14 +34,14 @@ public class MainActivity extends AppCompatActivity {
                 public boolean onTouch(View v, MotionEvent event) {
                     if(event.getAction() == MotionEvent.ACTION_DOWN){
                         switch (v.getId()) {
-                            case R.id.button5:
+                            case R.id.button:
                                 Data.send("keyboard.keydown.f");
                                 break;
                         }
                     }
                     else if(event.getAction() == MotionEvent.ACTION_UP){
                         switch (v.getId()) {
-                            case R.id.button5:
+                            case R.id.button:
                                 Data.send("keyboard.keyup.f");
                                 break;
                         }
